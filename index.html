@@ -12,7 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@300;400;500;600&display=swap&subset=greek,greek-ext" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -53,7 +53,6 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Σύστημα Εναλλαγής Γλώσσας μέσω CSS */
     body.lang-en .lang-el { display: none !important; }
     body.lang-el .lang-en { display: none !important; }
 
@@ -88,7 +87,7 @@
     .top-container {
       width: 100%;
       background-color: var(--navbar-black);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 2px solid var(--gold);
       z-index: 999;
       box-shadow: 0 4px 25px rgba(0,0,0,0.15);
       position: sticky;
@@ -112,17 +111,6 @@
       height: 45px;
     }
 
-    .brand-logo img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid var(--gold-light);
-      object-fit: cover;
-      opacity: 1;
-      margin-right: 12px;
-      transition: all 0.3s ease;
-    }
-
     .logo-text {
       display: flex;
       flex-direction: column;
@@ -131,13 +119,8 @@
       transition: all 0.3s ease;
     }
 
-    /* Εξομάλυνση του εφέ scroll στο header */
     .top-container.scrolled .header-wrapper {
       height: 60px;
-    }
-    .top-container.scrolled #scroll-logo {
-      width: 35px;
-      height: 35px;
     }
     .top-container.scrolled .logo-text h1 {
       font-size: 1.5rem;
@@ -227,7 +210,6 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    /* Language Switcher Button */
     .lang-toggle-btn {
       background: transparent;
       border: 1px solid var(--gold-light);
@@ -259,7 +241,7 @@
 
     .menu-nav-container {
       position: sticky;
-      top: 70px;
+      top: 72px;
       background-color: var(--bg-light);
       padding: 12px 0;
       z-index: 98;
@@ -269,7 +251,7 @@
       transition: top 0.3s ease;
     }
     .top-container.scrolled + main .menu-nav-container {
-      top: 60px;
+      top: 62px;
     }
 
     .nav-scroll-wrapper {
@@ -494,7 +476,7 @@
 
     .menu-category {
       margin-bottom: 40px;
-      scroll-margin-top: 145px;
+      scroll-margin-top: 147px;
     }
 
     .category-title {
@@ -671,7 +653,6 @@
       opacity: 0.7;
     }
 
-    /* Back to top button */
     #backToTop {
       position: fixed;
       bottom: 90px;
@@ -742,12 +723,6 @@
         height: 40px;
       }
 
-      .brand-logo img {
-        width: 35px;
-        height: 35px;
-        margin-right: 8px;
-      }
-
       .top-container.scrolled .logo-text h1 {
         font-size: 1.3rem;
       }
@@ -801,12 +776,12 @@
       }
 
       .menu-nav-container {
-        top: 60px;
+        top: 62px;
         padding: 8px 0;
       }
 
       .menu-category {
-        scroll-margin-top: 135px;
+        scroll-margin-top: 137px;
       }
 
       .welcome-text h2 {
@@ -836,14 +811,14 @@
     }
   </style>
 </head>
-<body class="lang-el"> <div id="preloader">
+<body class="lang-el">
+  <div id="preloader">
     <div class="spinner"></div>
   </div>
 
   <header class="top-container" id="mainHeader">
     <div class="header-wrapper">
       <div class="brand-logo">
-        <img src="https://i.postimg.cc/Mp0j1DvH/logo.jpg" alt="Kubbe Logo" id="scroll-logo" />
         <div class="logo-text">
           <h1>KUB<span class="tilted-b">B</span>E</h1>
           <p>Coffee · Hookah · View</p>
@@ -920,22 +895,22 @@
           <div class="menu-nav-scroll" id="menu-nav-links">
             <button class="menu-nav-btn active" onclick="scrollToCategory('cat-coffee', this)"><span class="lang-el">Καφές</span><span class="lang-en">Coffee</span></button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-tea', this)"><span class="lang-el">Τσάι</span><span class="lang-en">Tea</span></button>
-            <button class="menu-nav-btn" onclick="scrollToCategory('cat-chocolate', this)"><span class="lang-el">Σοκολάτες</span><span class="lang-en">Chocolate Drinks</span></button>
+            <button class="menu-nav-btn" onclick="scrollToCategory('cat-chocolate', this)">Chocolate Drinks</button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-milkshakes', this)">Milkshakes</button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-smoothies', this)">Smoothies</button>
-            <button class="menu-nav-btn" onclick="scrollToCategory('cat-homemade', this)"><span class="lang-el">Σπιτικά Αναψυκτικά</span><span class="lang-en">Homemade</span></button>
+            <button class="menu-nav-btn" onclick="scrollToCategory('cat-homemade', this)">Homemade</button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-juices', this)"><span class="lang-el">Χυμοί</span><span class="lang-en">Juices</span></button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-shisha', this)"><span class="lang-el">Ναργιλές</span><span class="lang-en">Shisha</span></button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-breakfast', this)">Breakfast & Brunch</button>
-            <button class="menu-nav-btn" onclick="scrollToCategory('cat-main', this)"><span class="lang-el">Κυρίως Πιάτα</span><span class="lang-en">Main Dishes</span></button>
+            <button class="menu-nav-btn" onclick="scrollToCategory('cat-main', this)">Main Dishes</button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-salads', this)"><span class="lang-el">Σαλάτες</span><span class="lang-en">Salads</span></button>
-            <button class="menu-nav-btn" onclick="scrollToCategory('cat-platters', this)"><span class="lang-el">Ποικιλίες</span><span class="lang-en">Platters</span></button>
+            <button class="menu-nav-btn" onclick="scrollToCategory('cat-platters', this)">Platters</button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-pancakes', this)">Pancakes & Waffles</button>
-            <button class="menu-nav-btn" onclick="scrollToCategory('cat-desserts', this)"><span class="lang-el">Γλυκά</span><span class="lang-en">Desserts</span></button>
-            <button class="menu-nav-btn" onclick="scrollToCategory('cat-soft', this)"><span class="lang-el">Αναψυκτικά</span><span class="lang-en">Soft Drinks</span></button>
-            <button class="menu-nav-btn" onclick="scrollToCategory('cat-beers', this)"><span class="lang-el">Μπύρες</span><span class="lang-en">Beers</span></button>
+            <button class="menu-nav-btn" onclick="scrollToCategory('cat-desserts', this)">Desserts</button>
+            <button class="menu-nav-btn" onclick="scrollToCategory('cat-soft', this)">Soft Drinks</button>
+            <button class="menu-nav-btn" onclick="scrollToCategory('cat-beers', this)">Beers</button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-wines', this)"><span class="lang-el">Κρασιά</span><span class="lang-en">Wines</span></button>
-            <button class="menu-nav-btn" onclick="scrollToCategory('cat-spirits', this)"><span class="lang-el">Ποτά</span><span class="lang-en">Spirits</span></button>
+            <button class="menu-nav-btn" onclick="scrollToCategory('cat-spirits', this)">Spirits</button>
             <button class="menu-nav-btn" onclick="scrollToCategory('cat-cocktails', this)">Cocktails</button>
           </div>
           <button class="nav-scroll-arrow" onclick="scrollNav(200)" aria-label="Scroll right">›</button>
@@ -945,7 +920,7 @@
       <div class="menu-legend">
         <div class="legend-item">
           <span class="menu-badge badge-vg" style="margin: 0;">VG</span>
-          <span class="lang-el">Χορτοφαγικό</span><span class="lang-en">Vegetarian</span>
+          <span class="lang-el">Vegetarian</span><span class="lang-en">Vegetarian</span>
         </div>
         <div class="legend-item">
           <span class="menu-badge badge-ve" style="margin: 0;">VE</span>
@@ -954,7 +929,7 @@
       </div>
 
       <div class="menu-category" id="cat-coffee">
-        <h2 class="category-title"><span class="lang-el">Καφές & Matcha</span><span class="lang-en">Coffee & Matcha</span></h2>
+        <h2 class="category-title"><span class="lang-el">Coffee</span><span class="lang-en">Coffee</span></h2>
         <div class="menu-item"><div class="item-main"><div class="item-name">Espresso</div></div><div class="item-price">2.70€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Espresso Double</div></div><div class="item-price">3.00€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Cappuccino</div></div><div class="item-price">4.00€</div></div>
@@ -964,22 +939,22 @@
         <div class="menu-item"><div class="item-main"><div class="item-name">Iced Flat White</div></div><div class="item-price">4.60€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Latte</div></div><div class="item-price">4.40€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Freddo Latte</div></div><div class="item-price">4.80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Matcha Latte</div><div class="item-desc"><span class="lang-el">Ζεστό / Κρύο premium premium μείγμα ιαπωνικού πράσινου τσαγιού</span><span class="lang-en">Hot / Iced premium Japanese green tea blend</span></div></div><div class="item-price">4.80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Ελληνικός Καφές</span><span class="lang-en">Greek Coffee</span></div><div class="item-desc"><span class="lang-el">Κλασικός</span><span class="lang-en">Classic</span></div></div><div class="item-price">3.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Ελληνικός Διπλός</span><span class="lang-en">Greek Coffee Double</span></div><div class="item-desc"><span class="lang-el">Κλασικός</span><span class="lang-en">Classic</span></div></div><div class="item-price">3.50€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Matcha Latte</div></div><div class="item-price">4.80€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Greek Coffee</div><div class="item-desc"><span class="lang-el">Κλασικός</span><span class="lang-en">Classic</span></div></div><div class="item-price">3.00€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Greek Coffee Double</div><div class="item-desc"><span class="lang-el">Κλασικός</span><span class="lang-en">Classic</span></div></div><div class="item-price">3.50€</div></div>
       </div>
 
       <div class="menu-category" id="cat-tea">
-        <h2 class="category-title"><span class="lang-el">Τσάι</span><span class="lang-en">Tea</span></h2>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Τσάι Πράσινο</span><span class="lang-en">Green Tea</span></div></div><div class="item-price">3.80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Τσάι Μαύρο</span><span class="lang-en">Black Tea</span></div></div><div class="item-price">3.80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Τσάι Ροδάκινο</span><span class="lang-en">Peach Tea</span></div></div><div class="item-price">3.80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Χαμομήλι</span><span class="lang-en">Chamomile</span></div></div><div class="item-price">3.80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Τσάι Μάτσα</span><span class="lang-en">Matcha Tea</span></div></div><div class="item-price">3.80€</div></div>
+        <h2 class="category-title"><span class="lang-el">Tea</span><span class="lang-en">Tea</span></h2>
+        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Green Tea</span><span class="lang-en">Green Tea</span></div></div><div class="item-price">3.80€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Black Tea</span><span class="lang-en">Black Tea</span></div></div><div class="item-price">3.80€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Peach Tea</span><span class="lang-en">Peach Tea</span></div></div><div class="item-price">3.80€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Chamomile</span><span class="lang-en">Chamomile</span></div></div><div class="item-price">3.80€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Matcha Tea</span><span class="lang-en">Matcha Tea</span></div></div><div class="item-price">3.80€</div></div>
       </div>
 
       <div class="menu-category" id="cat-chocolate">
-        <h2 class="category-title"><span class="lang-el">Σοκολάτες</span><span class="lang-en">Chocolate Drinks</span></h2>
+        <h2 class="category-title">Chocolate Drinks</h2>
         <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Κλασική Σοκολάτα</span><span class="lang-en">Classic Chocolate</span></div></div><div class="item-price">4.80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Λευκή Σοκολάτα</span><span class="lang-en">White Chocolate</span></div></div><div class="item-price">4.80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Bueno</div></div><div class="item-price">4.80€</div></div>
@@ -1003,15 +978,15 @@
       </div>
 
       <div class="menu-category" id="cat-homemade">
-        <h2 class="category-title"><span class="lang-el">Σπιτικά Αναψυκτικά</span><span class="lang-en">Homemade Soft Drinks</span></h2>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Λεμόνι</span><span class="lang-en">Lemon</span></div></div><div class="item-price">4.30€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Ροζ Γκρέιπφρουτ</span><span class="lang-en">Pink Grapefruit</span></div></div><div class="item-price">4.30€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Βύσσινο</span><span class="lang-en">Sour Cherry</span></div></div><div class="item-price">4.30€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Μάνγκο Λεμόνι</span><span class="lang-en">Mango Lemon</span></div></div><div class="item-price">4.50€</div></div>
+        <h2 class="category-title">Homemade</h2>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Lemon</div></div><div class="item-price">4.30€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Pink Grapefruit</div></div><div class="item-price">4.30€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Sour Cherry</div></div><div class="item-price">4.30€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Mango Lemon</div></div><div class="item-price">4.50€</div></div>
       </div>
 
       <div class="menu-category" id="cat-juices">
-        <h2 class="category-title"><span class="lang-el">Χυμοί</span><span class="lang-en">Juices</span></h2>
+        <h2 class="category-title"><span class="lang-el">Juices</span><span class="lang-en">Juices</span></h2>
         <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Φρέσκος Χυμός Πορτοκάλι</span><span class="lang-en">Fresh Orange Juice</span></div></div><div class="item-price">4.50€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Motion</div></div><div class="item-price">3.80€</div></div>
       </div>
@@ -1022,37 +997,37 @@
         <div class="menu-item"><div class="item-main"><div class="item-name">Premium Blonde Shisha</div><div class="item-desc"><span class="lang-el">Wookah · Karma · Maklaud (Περιλαμβάνει Πάγο)</span><span class="lang-en">Wookah · Karma · Maklaud (Including Ice)</span></div></div><div class="item-price">20.00€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Dark Leaf Shisha</div><div class="item-desc"><span class="lang-el">Περιλαμβάνει Πάγο</span><span class="lang-en">Including Ice</span></div></div><div class="item-price">25.00€</div></div>
 
-        <div class="sub-section-title"><span class="lang-el">Γεύσεις & Μιξ</span><span class="lang-en">Flavors & Mixes</span></div>
+        <div class="sub-section-title">Flavors & Mixes</div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Blonde Leaf</div><div class="item-desc">Shock Watermelon, Lemon and Chill, Strawberry Ice, Blueberry Punch, Kiwi Punch, Berry Mix, Mojito, Ice Kaktuz, Red Bull, Mint Cream, Mint</div></div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Blonde Leaf Mixes</div><div class="item-desc"><strong>Casanova</strong> (Melon, Berries, Mint), <strong>Love</strong> (Mix Sweet Fruits), <strong>Baam</strong> (Pineapple, Melon), <strong>Disco</strong> (Peach, Mint), <strong>Bonnie & Clyde</strong>, <strong>Lamonetto</strong>, <strong>Miss Joosy</strong>, <strong>Winter Edition</strong>, <strong>KUBBE Mix</strong></div></div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Dark Leaf (High Nicotine)</div><div class="item-desc"><strong>Summer Basket</strong> (Orange, Watermelon, Berries, Mint), <strong>Ice Baby</strong>, <strong>Juicy Smoothie</strong>, <strong>Ananas Shock</strong></div></div></div>
 
         <div class="sub-section-title">Shisha Extras</div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Πάγος στη Γυάλα</span><span class="lang-en">Ice in Glass</span></div></div><div class="item-price">2.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Παγωμένο Λάστιχο</span><span class="lang-en">Ice Pipe</span></div></div><div class="item-price">5.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Αλκοόλ στη Γυάλα</span><span class="lang-en">Alcohol in Glass</span></div></div><div class="item-price">8.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Φρούτα στη Γυάλα</span><span class="lang-en">Fruit in Glass</span></div></div><div class="item-price">6.00€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Ice in Base</div></div><div class="item-price">2.00€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Ice Hose</div></div><div class="item-price">5.00€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Alcohol in Base</div></div><div class="item-price">8.00€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Fruit in Base</div></div><div class="item-price">6.00€</div></div>
       </div>
 
       <div class="menu-category" id="cat-breakfast">
         <h2 class="category-title">Breakfast & Brunch</h2>
         <div class="menu-item"><div class="item-main"><div class="item-name">Smashed Avocado Toast <span class="menu-badge badge-vg">VG</span></div><div class="item-desc"><span class="lang-el">Προζυμένιο ψωμί, κρέμα αβοκάντο, αυγό ποσέ, ντοματίνια, φρέσκο πιπέρι</span><span class="lang-en">Sourdough bread, avocado cream, poached egg, cherry tomatoes, fresh pepper</span></div></div><div class="item-price">8.50€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Scrambled Eggs Brioche Bun</div><div class="item-desc"><span class="lang-el">Αφράτα αυγά scrambled, λιωμένο cheddar, μπέικον και sriracha mayo μέσα σε brioche ψωμάκι</span><span class="lang-en">Fluffy scrambled eggs, melted cheddar, bacon and sriracha mayo inside a brioche bun</span></div></div><div class="item-price">7.50€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Omelette Σπέσιαλ / Special Omelette</div><div class="item-desc"><span class="lang-el">Αυγό, μπέικον, τυρί, πατάτες τηγανητές</span><span class="lang-en">Egg, bacon, cheese, french fries</span></div></div><div class="item-price">7.70€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Special Omelette</div><div class="item-desc"><span class="lang-el">Αυγό, μπέικον, τυρί, πατάτες τηγανητές</span><span class="lang-en">Egg, bacon, cheese, french fries</span></div></div><div class="item-price">7.70€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">KUBBE Breakfast</div><div class="item-desc"><span class="lang-el">Φρυγανισμένο ψωμί, mini ομελέτα, λουκανόπαστα, ελιές, κρασίνια, ντοματίνια, αλλαντικά, ρόκα</span><span class="lang-en">Toasted bread, mini omelette, sausage paste, olives, breadsticks, cherry tomatoes, cold cuts, arugula</span></div></div><div class="item-price">16.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Μπολ Ενέργειας</span><span class="lang-en">Energy Bowl</span> <span class="menu-badge badge-vg">VG</span></div><div class="item-desc"><span class="lang-el">Γιαούρτι, μέλι, σπόροι chia, γκρανόλα, φρούτα εποχής</span><span class="lang-en">Yogurt, honey, chia seeds, granola, seasonal fruits</span></div></div><div class="item-price">6.90€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Energy Bowl <span class="menu-badge badge-vg">VG</span></div><div class="item-desc"><span class="lang-el">Γιαούρτι, μέλι, σπόροι chia, γκρανόλα, φρούτα εποχής</span><span class="lang-en">Yogurt, honey, chia seeds, granola, seasonal fruits</span></div></div><div class="item-price">6.90€</div></div>
       </div>
 
       <div class="menu-category" id="cat-main">
-        <h2 class="category-title"><span class="lang-el">Κυρίως Πιάτα</span><span class="lang-en">Main Dishes</span></h2>
+        <h2 class="category-title">Main Dishes</h2>
         <div class="sub-section-title">Burgers</div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Hamburger</div><div class="item-desc">Brioche bread, tomato, iceberg, 100% beef patty, bacon, mayo, cheddar</div></div><div class="item-price">9.00€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Double Hamburger</div><div class="item-desc">2 Beef patties, double bacon & cheddar</div></div><div class="item-price">12.00€</div></div>
 
-        <div class="sub-section-title"><span class="lang-el">Σάντουιτς & Finger Food Κοτόπουλο</span><span class="lang-en">Sandwiches & Chicken Finger Food</span></div>
+        <div class="sub-section-title">Sandwiches & Chicken Finger Food</div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Chicken Club Sandwich</div><div class="item-desc">Bread XL, chicken fillet, mayo, gouda, tomato, bacon, lettuce, fries</div></div><div class="item-price">8.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Crispy Chicken Strips</div><div class="item-desc"><span class="lang-el">Παναρισμένα φιλετάκια κοτόπουλου συνοδευόμενα από sauce</span><span class="lang-en">Breaded chicken fillets accompanied by sauce</span></div></div><div class="item-price">7.50€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Crispy Chicken Wings</div><div class="item-desc"><span class="lang-el">Τραγανές φτερούγες κοτόπουλου με bbq sauce</span><span class="lang-en">Crispy chicken wings with bbq sauce</span></div></div><div class="item-price">8.50€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Crispy Chicken Strips</div><div class="item-desc">Breaded chicken fillets accompanied by sauce</div></div><div class="item-price">7.50€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Crispy Chicken Wings</div><div class="item-desc">Crispy chicken wings with BBQ sauce</div></div><div class="item-price">8.50€</div></div>
       </div>
 
       <div class="menu-category" id="cat-salads">
@@ -1062,9 +1037,9 @@
       </div>
 
       <div class="menu-category" id="cat-platters">
-        <h2 class="category-title"><span class="lang-el">Ποικιλίες</span><span class="lang-en">Platters</span></h2>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Ποικιλία KUBBE</span><span class="lang-en">KUBBE Platter</span></div><div class="item-desc"><span class="lang-el">Κεφτεδάκια, λουκάνικο, τυριά, αλλαντικά, ντοματίνια, ελιές, κριτσίνια, κοτομπουκιές</span><span class="lang-en">Meatballs, sausage, cheeses, cold cuts, cherry tomatoes, olives, breadsticks, chicken nuggets</span></div></div><div class="item-price">25.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Μιξ Αλλαντικών & Τυριών Μικρή</span><span class="lang-en">Small Cheese & Cold Cuts Mix</span></div><div class="item-desc"><span class="lang-el">Ιδανικό για 2-3 άτομα</span><span class="lang-en">Ideal for 2-3 people</span></div></div><div class="item-price">18.00€</div></div>
+        <h2 class="category-title">Platters</h2>
+        <div class="menu-item"><div class="item-main"><div class="item-name">KUBBE Platter</div><div class="item-desc"><span class="lang-el">Κεφτεδάκια, λουκάνικο, τυριά, αλλαντικά, ντοματίνια, ελιές, κριτσίνια, κοτομπουκιές</span><span class="lang-en">Meatballs, sausage, cheeses, cold cuts, cherry tomatoes, olives, breadsticks, chicken nuggets</span></div></div><div class="item-price">25.00€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Small Cheese & Cold Cuts Mix</div><div class="item-desc"><span class="lang-el">Ιδανικό για 2-3 άτομα</span><span class="lang-en">Ideal for 2-3 people</span></div></div><div class="item-price">18.00€</div></div>
       </div>
 
       <div class="menu-category" id="cat-pancakes">
@@ -1075,25 +1050,26 @@
         <div class="menu-item"><div class="item-main"><div class="item-name">Praline Peanut Dubai</div></div><div class="item-price">6.50€</div></div>
 
         <div class="sub-section-title">Waffles</div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Σοκολάτα / Μπουένο / Λευκή / Φράουλα / Dubai / Λεμόνι</span><span class="lang-en">Chocolate / Bueno / White / Strawberry / Dubai / Lemon</span></div></div><div class="item-price">6.50€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Chocolate / Bueno / White / Strawberry / Dubai / Lemon</div></div><div class="item-price">6.50€</div></div>
 
-        <div class="sub-section-title"><span class="lang-el">Έξτρα Συνοδευτικά</span><span class="lang-en">Sweet Extras</span> (+0.70€)</div>
+        <div class="sub-section-title">Toppings (+0.70€)</div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Biscuits, OREO, Nuts, Pouraki, Wafer Amareti, Whipped Cream, Banana, Strawberry</div></div></div>
       </div>
 
       <div class="menu-category" id="cat-desserts">
-        <h2 class="category-title"><span class="lang-el">Γλυκά</span><span class="lang-en">Desserts</span></h2>
-        <div class="menu-item"><div class="item-main"><div class="item-name">San Sebastian Cheesecake</div><div class="item-desc"><span class="lang-el">Βελούδινο καμένο cheesecake με πλούσιο περιχύσιμο ζεστής πραλίνας σοκολάτας ή Bueno</span><span class="lang-en">Velvety burnt cheesecake with rich warm chocolate praline or Bueno topping</span></div></div><div class="item-price">6.80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Σουφλέ Σοκολάτας</span><span class="lang-en">Chocolate Soufflé</span></div></div><div class="item-price">5.50€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Μέλι Γιαούρτι</span><span class="lang-en">Honey Yogurt</span> <span class="menu-badge badge-vg">VG</span></div></div><div class="item-price">5.00€</div></div>
+        <h2 class="category-title">Desserts</h2>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Cheesecake</div></div><div class="item-price">6.80€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Tiramisu</div></div><div class="item-price">--€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Banoffee</div></div><div class="item-price">--€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Lemon Pie</div></div><div class="item-price">--€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Chocolate Soufflé</div></div><div class="item-price">5.50€</div></div>
       </div>
 
       <div class="menu-category" id="cat-soft">
-        <h2 class="category-title"><span class="lang-el">Αναψυκτικά</span><span class="lang-en">Soft Drinks</span></h2>
+        <h2 class="category-title">Soft Drinks</h2>
         <div class="menu-item"><div class="item-main"><div class="item-name">Coca Cola Classic / Zero</div></div><div class="item-price">3.80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Fanta</div></div><div class="item-price">3.80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Schweppes Tropical Fusion</div></div><div class="item-price">3.80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Aqua with carbon</div></div><div class="item-price">4.50€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Βίκος Cola / Λεμόνι / Πορτοκάλι 250ml</div></div><div class="item-price">3.80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Perrier</div></div><div class="item-price">1.60€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Hell Energy / Dark Cherry</div></div><div class="item-price">3.80€</div></div>
@@ -1101,19 +1077,16 @@
       </div>
 
       <div class="menu-category" id="cat-beers">
-        <h2 class="category-title"><span class="lang-el">Μπύρες</span><span class="lang-en">Beers</span></h2>
-        <div class="menu-item"><div class="item-main"><div class="item-name">EZA Fine Lager / Free (0%)</div></div><div class="item-price">4.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">EZA Pilsner</div></div><div class="item-price">4.00€</div></div>
+        <h2 class="category-title">Beers</h2>
+        <div class="menu-item"><div class="item-main"><div class="item-name">EZA (Fine Lager / Pilsner / Free 0%)</div></div><div class="item-price">4.00€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Corona / Corona Cero 0% 330ml</div></div><div class="item-price">6.00€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Creta Kings 330ml / Barell 330ml</div></div><div class="item-price">5.00€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Franziskaner Weiss 500ml</div></div><div class="item-price">7.50€</div></div>
       </div>
 
-      <!-- WINES -->
       <div class="menu-category" id="cat-wines">
         <h2 class="category-title"><span class="lang-el">Κρασιά</span><span class="lang-en">Wines</span></h2>
 
-        <!-- ΛΕΥΚΑ -->
         <div class="sub-section-title"><span class="lang-el">Λευκά Κρασιά</span><span class="lang-en">White Wines</span></div>
         
         <div class="menu-item">
@@ -1151,7 +1124,6 @@
           <div class="item-price">6.00€ / 20.00€</div>
         </div>
 
-        <!-- ΡΟΖΕ -->
         <div class="sub-section-title"><span class="lang-el">Ροζέ Κρασιά</span><span class="lang-en">Rosé Wines</span></div>
         
         <div class="menu-item">
@@ -1168,7 +1140,6 @@
           <div class="item-price">8.00€ / 40.00€</div>
         </div>
 
-        <!-- ΚΟΚΚΙΝΑ -->
         <div class="sub-section-title"><span class="lang-el">Κόκκινα Κρασιά</span><span class="lang-en">Red Wines</span></div>
         
         <div class="menu-item">
@@ -1194,7 +1165,7 @@
       </div>
 
       <div class="menu-category" id="cat-spirits">
-        <h2 class="category-title"><span class="lang-el">Ποτά</span><span class="lang-en">Spirits</span></h2>
+        <h2 class="category-title">Spirits</h2>
         <div class="sub-section-title">Vodka</div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Stoli / Smirnoff</div></div><div class="item-price">8€ / 80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Beluga / Belvedere / Ciroc</div></div><div class="item-price">11€ / 120€</div></div>
@@ -1202,17 +1173,17 @@
         <div class="sub-section-title">Gin Menu (Perfect Serves Trend)</div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Beefeater / Tanqueray</div></div><div class="item-price">8€ / 80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Bombay Sapphire</div></div><div class="item-price">8.5€ / 80€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Hendrick's Premium Serve</div><div class="item-desc"><span class="lang-el">Με Three Cents Tonic, λεπτές φέτες αγγουριού και ροζ πιπέρι</span><span class="lang-en">With Three Cents Tonic, thin cucumber slices and pink pepper</span></div></div><div class="item-price">9€ / 100€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Hendrick's Premium Serve</div><div class="item-desc">With Three Cents Tonic, thin cucumber slices and pink pepper</div></div><div class="item-price">9€ / 100€</div></div>
 
         <div class="sub-section-title">Tequila, Rum & Whisky</div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Cuervo Reposado / Silver</div></div><div class="item-price">8.00€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Cuervo Reposado / Silver</div></div><div class="item-price">8€ / 80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Don Julio Reposado / Blanco</div></div><div class="item-price">10€ / 100€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Bacardi / Johnnie Walker Red / Jameson</div></div><div class="item-price">8€ / 80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Havana Club / Plantation / Sailor Jerry</div></div><div class="item-price">8.5€ / 90€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">JW Black / Chivas 12 / Jack Daniel's</div></div><div class="item-price">10€ / 100€</div></div>
 
-        <div class="sub-section-title"><span class="lang-el">Τοπικά & Λικέρ</span><span class="lang-en">Local & Liqueurs</span></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name"><span class="lang-el">Κρητικό Ούζο / Τσικουδιά</span><span class="lang-en">Cretan Ouzo / Tsikoudia</span></div></div><div class="item-price">5.00€</div></div>
+        <div class="sub-section-title">Local Spirits & Liqueurs</div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Cretan Ouzo / Tsikoudia</div></div><div class="item-price">5.00€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Metaxa 3★ / Campari / Aperol / Disaronno</div></div><div class="item-price">8€ / 80€</div></div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Baileys / Jagermeister</div></div><div class="item-price">8.00€</div></div>
       </div>
@@ -1221,8 +1192,8 @@
         <h2 class="category-title">Cocktails</h2>
         <div class="sub-section-title">Sunset Spritz & Highballs</div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Aperol Spritz</div></div><div class="item-price">8.00€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Hugo</div><div class="item-desc"><span class="lang-el">Prosecco, λικέρ Elderflower, σόδα, φρέσκος δυόσμος και lime</span><span class="lang-en">Prosecco, Elderflower liqueur, soda, fresh mint and lime</span></div></div><div class="item-price">8.50€</div></div>
-        <div class="menu-item"><div class="item-main"><div class="item-name">Paloma Spritz</div><div class="item-desc"><span class="lang-el">Tequila Blanco, σιρόπι αγαύης, φρέσκο lime και Schweppes Pink Grapefruit Soda</span><span class="lang-en">Tequila Blanco, agave syrup, fresh lime and Schweppes Pink Grapefruit Soda</span></div></div><div class="item-price">8.50€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Hugo</div><div class="item-desc">Prosecco, Elderflower liqueur, soda, fresh mint and lime</div></div><div class="item-price">8.50€</div></div>
+        <div class="menu-item"><div class="item-main"><div class="item-name">Paloma Spritz</div><div class="item-desc">Tequila Blanco, agave syrup, fresh lime and Schweppes Pink Grapefruit Soda</div></div><div class="item-price">8.50€</div></div>
 
         <div class="sub-section-title">Classic & Signatures</div>
         <div class="menu-item"><div class="item-main"><div class="item-name">Mai Tai / Mojito</div></div><div class="item-price">8.50€</div></div>
@@ -1290,10 +1261,9 @@
 
     window.addEventListener('load', function() {
       document.getElementById('preloader').classList.add('fade-out');
-      initIntersectionObserver(); // Ενεργοποίηση του Observer μόλις φορτώσει η σελίδα
+      initIntersectionObserver();
     });
 
-    // Σύστημα Εναλλαγής Γλώσσας
     function toggleLanguage() {
       const body = document.body;
       const btn = document.getElementById('langToggle');
@@ -1308,7 +1278,6 @@
       }
     }
 
-    // Βελτιστοποιημένος scroll listener με throttle/απλουστευμένη λογική
     window.addEventListener('scroll', function() {
       const header = document.getElementById('mainHeader');
       const navBar = document.querySelector('.nav-bar');
@@ -1327,7 +1296,6 @@
         backToTop.classList.remove('visible');
       }
 
-      // Κρύψιμο / Εμφάνιση mobile bottom navbar
       if (window.innerWidth <= 768) {
         if (currentScrollY > lastScrollY && currentScrollY > 60) {
           navBar.classList.add('nav-bar-hidden');
@@ -1338,19 +1306,18 @@
       lastScrollY = currentScrollY;
     });
 
-    // Χρήση IntersectionObserver για αστραπιαία εναλλαγή ενεργών κατηγοριών μενού
     function initIntersectionObserver() {
       const categories = document.querySelectorAll('.menu-category');
       const navButtons = document.querySelectorAll('.menu-nav-btn');
       
       const observerOptions = {
         root: null,
-        rootMargin: '-120px 0px -70% 0px', // Στοχεύει το πάνω μέρος της οθόνης
+        rootMargin: '-120px 0px -70% 0px',
         threshold: 0
       };
 
       const observer = new IntersectionObserver((entries) => {
-        if (isManualScrolling) return; // Παράκαμψη αν ο χρήστης έκανε κλικ σε κουμπί
+        if (isManualScrolling) return;
 
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -1362,7 +1329,6 @@
                   navButtons.forEach(b => b.classList.remove('active'));
                   btn.classList.add('active');
                   
-                  // Αυτόματο scroll του οριζόντιου μενού κατηγοριών
                   const container = document.getElementById('menu-nav-links');
                   container.scrollTo({
                     left: btn.offsetLeft - container.offsetWidth / 2 + btn.offsetWidth / 2,
@@ -1447,7 +1413,6 @@
 
     function closeLightbox() {
       const lightboxModal = document.getElementById('customLightbox');
-      lightboxModal.classList.remove('remove');
       lightboxModal.classList.remove('show');
       setTimeout(() => {
         lightboxModal.style.display = 'none';
